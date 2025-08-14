@@ -11,7 +11,7 @@ class User(AbstractUser):
 
 
 
-# 2. Company
+# Company
 class Company(models.Model):
     name = models.CharField(max_length=255)
     website = models.URLField(blank=True)
@@ -23,7 +23,7 @@ class Company(models.Model):
         return self.name
 
 
-# 3. Job
+# Job
 class Job(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="jobs")
     title = models.CharField(max_length=255)
@@ -38,7 +38,7 @@ class Job(models.Model):
         return f"{self.title} @ {self.company.name}"
 
 
-# 4. Application
+# Application
 class Application(models.Model):
     STATUS_CHOICES = [
         ("applied", "Applied"),
@@ -57,7 +57,7 @@ class Application(models.Model):
         return f"{self.applicant.username} → {self.job.title}"
 
 
-# 5. Interview
+# Interview
 class Interview(models.Model):
     application = models.ForeignKey(Application, on_delete=models.CASCADE, related_name="interviews")
     scheduled_for = models.DateTimeField()
