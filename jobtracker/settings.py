@@ -18,7 +18,9 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
+#SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
+SECRET_KEY = "django-insecure-b7g4z8jh!&l@q_example_secret_key_1f@o*p^0"
+
 DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS = ["*"]
 AUTH_USER_MODEL = 'tracking.User'
@@ -29,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions','django.contrib.messages','django.contrib.staticfiles',
     'rest_framework',
     'tracking',
+    
 ]
 
 DATABASES = {
@@ -47,6 +50,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",  # 
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+ROOT_URLCONF = 'jobtracker.urls'
 
 TEMPLATES = [
     {
