@@ -23,4 +23,3 @@ class ApplicationViewSet(ModelViewSet):
 class InterviewViewSet(ModelViewSet):
     queryset = Interview.objects.all()
     serializer_class = InterviewSerializer
-    # Create your views here.
