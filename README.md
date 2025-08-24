@@ -147,6 +147,7 @@ Delete
 Update
 
 ![CRUD Function3](images/update-user.png)
+
 ---
 
 ### Companies
@@ -161,10 +162,13 @@ Delete
 Update
 ![CRUD Function4](images/update-user.png)
 
+---
+
 ### Jobs
 Successfull job posted:
 
 ![Job Created](images/jobs.png)
+
 ---
 
 ### Applications
@@ -176,12 +180,15 @@ Applicant applies for a job:
 Delete
 
 ![CRUD Function5](images/delete-application.png)
+
 ---
 
 ### Interviews
 Recruiter schedules an interview for an application:
 
 ![Interview Scheduled](images/interviews.png)
+
+---
 
 ### Token Authentication
 1. Generate tokens via terminal:
