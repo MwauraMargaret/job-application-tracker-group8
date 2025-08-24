@@ -2,15 +2,15 @@
 
 A Django REST Framework project for managing job applications where recruiters can create companies and jobs, applicants can apply for jobs and attend interviews and admins oversee the whole system.
 
-Here is the project home page:
+The project home page:
 
 ![Homepage](images/homepage.png)
 ---
 
 ## Group Members
-- 149264 Mwaura Margaret Wambui
-- 150321 Ndumbe Stanley Munene
-- 150668 Ndung’u Victor Kahindo
+- 149264 Mwaura, Margaret Wambui
+- 150321 Ndumbe, Stanley Munene
+- 150668 Ndung’u, Victor Kahindo
 - 150851 Ndeti, Melissa Mwende
 
 ---
@@ -61,11 +61,11 @@ http://127.0.0.1:8000/
 
 ### 1. Models & Relationships
 
-- *User (Custom)* → extends AbstractUser with a role (applicant or recruiter)  
-- *Company* → belongs to a recruiter (owner)  
-- *Job* → belongs to a company  
-- *Application* → links applicant → job with status (applied, screening, interview, offer, rejected)  
-- *Interview* → linked to an application, stores date, mode, notes  
+- **User (Custom)** → extends AbstractUser with a role (applicant or recruiter)  
+- **Company** → belongs to a recruiter (owner)  
+- **Job** → belongs to a company  
+- **Application** → links applicant → job with status (applied, screening, interview, offer, rejected)  
+- **Interview** → linked to an application, stores date, mode, notes  
 
 **Relationships:**
 ```pgsql
@@ -128,13 +128,25 @@ Created users:
 
 ![Users List](images/users.png)
 
-### Basic Authentication
-With correct authentication details:
+#### Basic Authentication
+#### With correct authentication details:
 ![Basic Auth](images/basic-auth-test.png)
 
-With incorrect authentication details:
+#### With incorrect authentication details:
 ![Basic Auth](images/basic-auth-test2.png)
 
+#### Other CRUD Functionalities
+Create
+
+![CRUD Function1](images/add-user.png)
+
+Delete
+
+![CRUD Function2](images/delete-user.png)
+
+Update
+
+![CRUD Function3](images/update-user.png)
 ---
 
 ### Companies
@@ -142,12 +154,17 @@ Successfull company profile created:
 
 ![Company Created](images/companies.png)
 
+#### Other CRUD Functionalities
+Delete
+![CRUD Function](images/delete-company.png)
+
+Update
+![CRUD Function4](images/update-user.png)
 
 ### Jobs
 Successfull job posted:
 
 ![Job Created](images/jobs.png)
-
 ---
 
 ### Applications
@@ -155,14 +172,16 @@ Applicant applies for a job:
 
 ![Application Submitted](images/applications.png)
 
+#### Other CRUD Functionalities
+Delete
+
+![CRUD Function5](images/delete-application.png)
 ---
 
 ### Interviews
 Recruiter schedules an interview for an application:
 
 ![Interview Scheduled](images/interviews.png)
-
----
 
 ### Token Authentication
 1. Generate tokens via terminal:
