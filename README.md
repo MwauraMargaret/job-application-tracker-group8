@@ -17,43 +17,43 @@ Here is the project home page:
 ##  Setup Instructions
 
 ### 1. Clone the repo
-bash
+```bash
 git clone https://github.com/MwauraMargaret/job-application-tracker-group8.git
 cd job-application-tracker-group8
-
+```
 
 ### 2. Create a virtual environment
-bash
+```bash
 python -m venv venv
 
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
-
+```
 
 ### 3. Install dependencies
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 ### 4. Apply migrations
-bash
+```bash
 python manage.py makemigrations
 python manage.py migrate
-
+```
 
 ### 5. Create a superuser
-bash
+```bash
 python manage.py createsuperuser
-
+```
 
 ### 6. Run the server
-bash
+```bash
 python manage.py runserver
-
+```
 Server will start at:
-cpp
+```cpp
 http://127.0.0.1:8000/
-
+```
 ---
 
 ## Project Details
@@ -66,24 +66,24 @@ http://127.0.0.1:8000/
 - *Application* → links applicant → job with status (applied, screening, interview, offer, rejected)  
 - *Interview* → linked to an application, stores date, mode, notes  
 
-*Relationships:*
-pgsql
+**Relationships:**
+```pgsql
 User (recruiter) ── owns ──> Company ── posts ──> Job
 User (applicant) ── applies ──> Application ── relates to ──> Job
 Application ── schedules ─> Interview
-
+```
 ---
 
 ### 2. Serializers & Views
 
-- *Serializers*: Convert models to JSON.  
+- **Serializers**: Convert models to JSON.  
   - UserSerializer  
   - CompanySerializer  
   - JobSerializer  
   - ApplicationSerializer  
   - InterviewSerializer  
 
-- *Views (ViewSets)*: Provide CRUD APIs.  
+- **Views (ViewSets)**: Provide CRUD APIs.  
   - UserViewSet  
   - CompanyViewSet  
   - JobViewSet  
@@ -166,10 +166,11 @@ Recruiter schedules an interview for an application:
 ### Token Authentication
 1. Generate tokens via terminal:
 
-bash
+```bash
 python manage.py drf_create_token alice
 python manage.py drf_create_token bob
 python manage.py drf_create_token wambui
+```
 
 2. Test the tokens via Postman:
 ![Test Token](images/token-auth.png)
