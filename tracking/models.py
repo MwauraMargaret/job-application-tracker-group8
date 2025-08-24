@@ -10,7 +10,6 @@ class User(AbstractUser):
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='applicant')
 
-
 # Company
 class Company(models.Model):
     name = models.CharField(max_length=255)
@@ -21,7 +20,6 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
-
 
 # Job
 class Job(models.Model):
@@ -36,7 +34,6 @@ class Job(models.Model):
 
     def __str__(self):
         return f"{self.title} @ {self.company.name}"
-
 
 # Application
 class Application(models.Model):
@@ -55,7 +52,6 @@ class Application(models.Model):
 
     def __str__(self):
         return f"{self.applicant.username} → {self.job.title}"
-
 
 # Interview
 class Interview(models.Model):
