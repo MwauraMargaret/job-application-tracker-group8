@@ -1,9 +1,16 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .models import User, Company, Job, Application, Interview
 from .serializers import (
     UserSerializer, CompanySerializer, JobSerializer,
     ApplicationSerializer, InterviewSerializer
 )
+
+class IsRecruiterOrReadOnly(permissions.BasePermission):
+
+    def has_permission(self, request, view):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        return request.user.is_authenticated and request.user.role == "recruiter"
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
